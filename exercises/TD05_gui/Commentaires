@@ -1,0 +1,7 @@
+Dans un widget créer avec la fonction canvas.grid(), l'origine se situe en haut à gauche
+
+Pour tracer un ovale, Python trace un rectangle (invible) dont les coordonnées s'exprime ainsi : 
+(coordonnée X du 1er coin , coordonnée Y de 1er coin, coordonnée X du 2ème coin, coordonnée Y du 2ème coin)
+Puis il trace un ovale inscrit dans ce rectangle
+Pour l'obtenir, on écrit la commande : """canvas.create_oval(X1, Y1, X2, Y2)
+
