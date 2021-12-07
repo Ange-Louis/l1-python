@@ -9,7 +9,9 @@ racine.mainloop() # Lancement de la boucle principale
 """
 import tkinter as tk
 import random
+from tkinter.constants import OUTSIDE
 
+c = "black"
 racine = tk.Tk() # Création de la fenêtre racine
 racine.title("Mon dessin")
 
@@ -17,17 +19,19 @@ canvas = tk.Canvas(racine, width = 500, height = 500, bg = "white")
 def choisir_une_couleur():
     
     def red():
+        global c
         c = "red"
-        return c
     def orange():
+        global c
+        global c
         c = "orange"
-        return c
     def yellow():
-        c = "yellow"
-        return c
+        global c
+        c = "yellow"    
     def black():
-        c = "blue"
-        return c
+        global c
+        c = "black"
+        
 
     racinecolor = tk.Tk()
     racinecolor.title("Choisir une couleur")
@@ -48,18 +52,18 @@ def cercle():
     x = random.randint(1,501)
     y = random.randint(1,501)
     size = random.randint(1,201)
-    canvas.create_oval(x - size, y + size, x + size, y - size)
+    canvas.create_oval(x - size, y + size, x + size, y - size, outline= c)
 def croix():
     x = random.randint(1,501)
     y = random.randint(1,501)
     size = random.randint(1, 201)
-    canvas.create_line(x + size, y - size, x - size, y + size)
-    canvas.create_line(x - size, y - size, x + size, y + size)
+    canvas.create_line(x + size, y - size, x - size, y + size, outline= c)
+    canvas.create_line(x - size, y - size, x + size, y + size, outline= c)
 def carré():
     x = random.randint(1,501)
     y = random.randint(1,501)
     size = random.randint(1, 201)
-    canvas.create_rectangle(x + size, y - size, x - size, y + size)
+    canvas.create_rectangle(x + size, y - size, x - size, y + size, outline=  c )
 
 button1 = tk.Button(text= "Choisir une couleur", font = ("gigi", "20"), command=choisir_une_couleur) # création d'un button
 button2 = tk.Button(text= "Cercle", font = ("gigi", "20"), command=cercle)
